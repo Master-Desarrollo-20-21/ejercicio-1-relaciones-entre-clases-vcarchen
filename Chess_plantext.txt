@@ -1,0 +1,36 @@
+@startuml Chess
+
+title Chess
+
+	class Chess{
+	    + play() : void 
+	}
+	Chess *--> Board
+	
+	class Board{
+	    + createInitialPiecesPlayers() : void
+	    + show() : void
+	    + checkMate() : boolean
+	}
+	Board o-->Piece
+	class Piece{
+	    + symbol() : char;
+	    + getInCoordinate(): char
+	}
+	
+	class Turn
+	class Player
+	class Color
+	
+	Board *--> Turn
+	Board *--> Player
+	Turn *--> Player
+
+	Player *--> Color
+	
+	Piece o--> Movement
+	Piece *--> Coordinate
+
+	
+	
+@enduml
